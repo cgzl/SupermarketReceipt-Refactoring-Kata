@@ -32,6 +32,12 @@ public class ShoppingCart {
         }
     }
 
+    /* 
+     * Here we have a variable named x but this name doesn't give us the meaning.
+     * I would name it "setOfProduct" because it is represent the number of product when it sold in set
+     * 
+     * We have also a variable called numberOfXs that would be better named "numberOfSets" because it shows the numbers of sets
+    */
     void handleOffers(Receipt receipt, Map<Product, Offer> offers, SupermarketCatalog catalog) {
         for (Product p: productQuantities().keySet()) {
             double quantity = productQuantities.get(p);
