@@ -47,7 +47,7 @@ public class ShoppingCart {
                 int quantityAsInt = (int) quantity;
                 Discount discount = null;
                 int x = 1;
-                if (offer.offerType == SpecialOfferType.THREE_FOR_TWO) {
+                if (offer.offerType == SpecialOfferType.THREE_FOR_TWO) { // Replace multiple if-else with switch
                     x = 3;
 
                 } else if (offer.offerType == SpecialOfferType.TWO_FOR_AMOUNT) {
@@ -79,3 +79,14 @@ public class ShoppingCart {
         }
     }
 }
+
+
+
+// Our deep Code Smells & Refactoring Suggestions:
+// 1. **Long Method (handleOffers)** - This method is too long and does multiple things. Split logic into smaller helper methods.
+// 2. **Magic Numbers (x values in handleOffers)** - Define constants instead of using hardcoded numbers like 2, 3, 5.
+// 3. **Complex Conditional Logic** - Refactor repeated `if-else` blocks using a `switch` statement (already applied).
+// 4. **Duplication in Discount Calculation** - Move discount calculations to a separate method.
+// 5. **Lack of Encapsulation** - ShoppingCart exposes internal data structures without proper encapsulation.
+// 6. **Inconsistent Responsibility** - The ShoppingCart class should not handle discount logic; move it to an OfferProcessor class.
+// 7. **Using Primitive Types for Money Calculations** - Use BigDecimal instead of double for better precision in monetary values.
