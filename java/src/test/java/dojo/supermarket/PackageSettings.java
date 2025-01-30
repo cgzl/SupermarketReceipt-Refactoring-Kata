@@ -10,3 +10,10 @@ import org.approvaltests.reporters.JunitReporter;
 public class PackageSettings {
     public static ApprovalFailureReporter UseReporter         = JunitReporter.INSTANCE;
 }
+
+/*
+ * Utility classes should not have public constructors
+ * To prevent the class from being instantiated, you should 
+ * define a non-public constructor. This will prevent the compiler 
+ * from implicitly generating a public parameterless constructor.
+ */
